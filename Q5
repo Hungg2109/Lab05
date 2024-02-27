@@ -1,0 +1,14 @@
+input_line = input("Enter a line of text (ends with '\\n'): ")
+
+input_line = input_line.rstrip('\n')
+
+letter_counts = {}
+
+for char in input_line:
+    if char.isalpha():  
+        char = char.lower()  
+        letter_counts[char] = letter_counts.get(char, 0) + 1
+
+print("Letter counts:")
+for letter, count in letter_counts.items():
+    print(f"{letter}: {count}")

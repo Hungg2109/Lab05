@@ -1,0 +1,32 @@
+list1 = ["M", "na", "i", "Hu"]
+list2 = ["y", "me", "s", "ng"]
+
+
+def create_list():
+    my_list = []
+    
+   
+    my_list.append(10)
+    my_list.append(20)
+    my_list.append(30)
+    
+    return my_list
+
+
+def concatenate_lists(list1, list2):
+
+    if len(list1) != len(list2):
+        return "Lists must have the same length for index-wise concatenation."
+    
+ 
+    result = []
+    
+  
+    for i in range(len(list1)):
+        result.append(list1[i] + list2[i])
+    
+    return result
+
+
+print("Task 1: Created list:", create_list())
+print("Task 2: Concatenated lists:", concatenate_lists(list1, list2))

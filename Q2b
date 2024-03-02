@@ -1,0 +1,14 @@
+class Vehicle:
+    def __init__(self, max_speed, mileage):
+      
+        self.max_speed = max_speed
+        self.mileage = mileage
+
+class Bus(Vehicle):
+    def seating_capacity(self, capacity=50):
+        return f"Bus seating capacity: {capacity} passengers"
+
+bus = Bus(80, 50000)
+print(f"Max speed of the bus: {bus.max_speed} km/h")
+print(f"Mileage of the bus: {bus.mileage} km")
+print(bus.seating_capacity()) 

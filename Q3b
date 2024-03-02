@@ -1,0 +1,30 @@
+class Vehicle:
+    color = "white"  # Class attribute for color (default: white)
+
+    def __init__(self, max_speed, mileage):
+        self.max_speed = max_speed
+        self.mileage = mileage
+
+    def fare(self):
+        return self.seating_capacity() * 100
+
+    def seating_capacity(self):
+        return 4  # You can adjust this value as needed
+
+class Bus(Vehicle):
+    def __init__(self, max_speed, mileage):
+        super().__init__(max_speed, mileage)  # Call parent class constructor
+
+    def fare(self):
+        # Override fare calculation for buses (add 10% maintenance charge)
+        base_fare = super().fare()  # Get base fare from parent class
+        maintenance_charge = 0.1 * base_fare
+        return base_fare + maintenance_charge
+
+    def seating_capacity(self):
+        return 50
+
+bus_instance = Bus(max_speed=80, mileage=50000)
+print(f"Max speed of the bus: {bus_instance.max_speed} km/h")
+print(f"Mileage of the bus: {bus_instance.mileage} km")
+print(f"Total fare for the bus: ${bus_instance.fare():.2f}")

@@ -1,0 +1,27 @@
+class Vehicle:
+    def __init__(self, name, capacity):
+        self.name = name
+        self.capacity = capacity
+
+class Bus(Vehicle):
+    def __init__(self, name, capacity):
+        super().__init__(name, capacity)
+
+# Create a Bus object
+my_bus = Bus(name="School Bus", capacity=50)
+
+if isinstance(my_bus, Bus):
+    print(f"The Bus object belongs to the Bus class.")
+else:
+    print(f"The Bus object does not belong to the Bus class.")
+
+class School_bus(Vehicle):
+    def __init__(self, name, capacity):
+        super().__init__(name, capacity)
+
+school_bus = School_bus(name="School Bus", capacity=50)
+
+if isinstance(school_bus, Vehicle):
+    print(f"School_bus is an instance of the Vehicle class.")
+else:
+    print(f"School_bus is not an instance of the Vehicle class.")
